@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Unit1 : MonoBehaviour
+public class UnitWarrior : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

@@ -812,7 +812,7 @@ GameObject:
   - component: {fileID: 735857651}
   - component: {fileID: 735857650}
   m_Layer: 0
-  m_Name: Unit 1
+  m_Name: Cube UnitWarrior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2543,7 +2543,7 @@ GameObject:
   - component: {fileID: 1563460332}
   - component: {fileID: 1563460331}
   m_Layer: 0
-  m_Name: Unit 1
+  m_Name: UnitWarrior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
