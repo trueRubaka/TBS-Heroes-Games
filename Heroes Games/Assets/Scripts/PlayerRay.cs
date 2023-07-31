@@ -7,11 +7,10 @@ public class PlayerRay : MonoBehaviour
 {
     public Transform Pointer;
     public Selectable CurrentSelectable;
-    
+
     void LateUpdate()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        
 
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
@@ -20,7 +19,7 @@ public class PlayerRay : MonoBehaviour
 
 
             Selectable selectable = hit.collider.gameObject.GetComponent<Selectable>();
-            
+
             if (selectable)
             {
                 if (CurrentSelectable && CurrentSelectable != selectable)
@@ -36,21 +35,8 @@ public class PlayerRay : MonoBehaviour
                 if (CurrentSelectable)
                 {
                     CurrentSelectable.Deselect();
-                    CurrentSelectable = null;
                 }
-            }
-           
+            }            
         }
-        else
-        {
-            if (CurrentSelectable)
-            {
-                CurrentSelectable.Deselect();
-                CurrentSelectable = null;
-            }
-        }
-        
-    }   
-    
-    
+    }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -7,34 +8,30 @@ using UnityEngine;
 
 public class Selectable : MonoBehaviour
 {
-    public Material boardBlack;
-    public Material boardWhite;
-    
-    private Material previousMaterial;
 
     public void Select()
     {
-        previousMaterial = GetComponent<Renderer>().material;
+
         GetComponent<Renderer>().material.color = Color.yellow;
+
     }
 
     public void Deselect()
     {
-        if (previousMaterial != null)
+
+        if (gameObject.CompareTag("black"))
         {
-            GetComponent<Renderer>().material = previousMaterial;
-            previousMaterial = null;
+            GetComponent<Renderer>().material.color = Color.black;
         }
-        else
+        else if (gameObject.CompareTag("white"))
         {
-            if (gameObject.CompareTag("black"))
-            {
-                GetComponent<Renderer>().material = boardBlack;
-            }
-            else if (gameObject.CompareTag("white"))
-            {
-                GetComponent<Renderer>().material = boardWhite;
-            }
+            GetComponent<Renderer>().material.color = Color.white;
+        }
+        else if (gameObject.CompareTag("Player"))
+        {
+            GetComponent<Renderer>().material.color = Color.red;
         }
     }
+
+
 }
